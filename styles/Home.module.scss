@@ -1,0 +1,49 @@
+.main {
+  animation: background-moving 10s linear infinite;
+  background: linear-gradient(
+    to right,
+    #6904C2,
+    #00875F,
+    #6904C2
+  );
+  background-size: 200%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.tiles {
+  height: calc(100vh - 1px);
+  width: calc(100vw - 1px);
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
+
+  .tile {
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+
+    &:after {
+      background-color: #18181B;
+      content: "";
+      inset: 0.5px;
+      position: absolute;
+    }
+  }
+}
+
+@keyframes background-moving {
+  from {
+    background-position: 0% center;
+  }
+  
+  to {
+    background-position: -200% center;
+  }
+}
