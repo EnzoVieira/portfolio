@@ -12,6 +12,59 @@
   justify-content: center;
   width: 100vw;
   height: 100vh;
+
+  .titlesContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    cursor: default;
+    pointer-events: none;
+
+    .frontTitleContainer, .behindTitleContainer {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .behindTitleContainer {
+      opacity: 0;
+    }
+
+    .title, .subtitle {
+      color: white;
+      margin: 0 2rem;
+      text-align: center;
+      text-shadow: 1px 3px 11px rgb(0 0 0 / 30%);
+      text-transform: uppercase;
+    }
+
+    .title {
+      font-size: 4vw;
+      line-height: 4vw;
+    }
+
+    .subtitle {
+      font-size: 2.2vw;
+      margin-top: 2rem;
+
+      span {
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 52%;
+          right: 0;
+          border-top: .25vw solid white;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
 }
 
 .tiles {
@@ -34,6 +87,14 @@
       content: "";
       inset: 0.5px;
       position: absolute;
+    }
+
+    &:hover::after {
+      opacity: .1;
+    }
+
+    &:hover {
+      opacity: 1 !important;
     }
   }
 }
