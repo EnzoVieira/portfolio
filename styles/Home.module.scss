@@ -1,3 +1,17 @@
+.snapContainer {
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  
+  & > .snapSection {
+    scroll-snap-align: start;
+
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
 .main {
   animation: background-moving 10s linear infinite;
   background: linear-gradient(
@@ -12,6 +26,7 @@
   justify-content: center;
   width: 100vw;
   height: 100vh;
+  position: relative;
 
   .titlesContainer {
     width: 100%;

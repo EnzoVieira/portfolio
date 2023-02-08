@@ -70,40 +70,48 @@ export default function Home() {
   }, [])
 
   return (
-    <main className={styles.main}>
-      <div className={styles.titlesContainer}>
-        <div className={styles.frontTitleContainer}>
-          <h1 className={`${font600.className} ${styles.title}`}>
-            Enzo Vieira
-          </h1>
+    <div className={styles.snapContainer}>
+      <section className={styles.snapSection}>
+        <main className={styles.main}>
+          <div className={styles.titlesContainer}>
+            <div className={styles.frontTitleContainer}>
+              <h1 className={`${font600.className} ${styles.title}`}>
+                Enzo Vieira
+              </h1>
 
-          <h3 className={`${font400.className} ${styles.subtitle}`}>
-            Web & App Developer and <span>Graduated</span> Future Software
-            Engineer
-          </h3>
-        </div>
+              <h3 className={`${font400.className} ${styles.subtitle}`}>
+                Web & App Developer and <span>Graduated</span> Future Software
+                Engineer
+              </h3>
+            </div>
 
-        <div className={styles.behindTitleContainer}>
-          <h1 className={`${font600.className} ${styles.title}`}>
-            Personal Portfolio
-          </h1>
+            <div className={styles.behindTitleContainer}>
+              <h1 className={`${font600.className} ${styles.title}`}>
+                Personal Portfolio
+              </h1>
 
-          <h3 className={`${font400.className} ${styles.subtitle}`}>
-            Web & App Developer and <span>Graduated</span> Future Software
-            Engineer
-          </h3>
-        </div>
-      </div>
+              <h3 className={`${font400.className} ${styles.subtitle}`}>
+                Web & App Developer and <span>Graduated</span> Future Software
+                Engineer
+              </h3>
+            </div>
+          </div>
 
-      <div className={styles.tiles}>
-        {Array.from(Array(columns * rows)).map((_, index) => (
-          <div
-            key={index}
-            className={styles.tile}
-            onClick={() => handleOnClickTile(index)}
-          />
-        ))}
-      </div>
-    </main>
+          <div className={styles.tiles}>
+            {Array.from(Array(columns * rows)).map((_, index) => (
+              <div
+                key={index}
+                className={styles.tile}
+                onClick={() => handleOnClickTile(index)}
+              />
+            ))}
+          </div>
+        </main>
+      </section>
+
+      <section className={styles.snapSection}>
+        <h2 className={`${font600.className} ${styles.title}`}>My Expertise</h2>
+      </section>
+    </div>
   )
 }

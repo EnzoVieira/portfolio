@@ -4,14 +4,15 @@
   margin: 0;
 }
 
-/* body, html {
-  background: #6904C2;
-} */
-
 html {
   height: -webkit-fill-available;
 }
 
 body {
+  height: 100vh;
+  width: 100vw;
   height: -webkit-fill-available;
+  overflow: hidden;
+
+  background: #18181B;
 }
