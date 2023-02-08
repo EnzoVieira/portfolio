@@ -2,7 +2,9 @@ import { Poppins, Source_Code_Pro } from "@next/font/google"
 import { Desktop, DeviceMobile, TerminalWindow } from "phosphor-react"
 
 import styles from "./Expertise.module.scss"
+
 import { HtmlTag } from "@/components/HtmlTag"
+import { FadeIn } from "@/components/FadeIn"
 
 const font600 = Poppins({ weight: "600", subsets: ["latin"] })
 const font400 = Poppins({ weight: "400", subsets: ["latin"] })
@@ -16,7 +18,7 @@ export function Expertise() {
         <h2 className={`${font600.className} ${styles.title}`}>My Expertise</h2>
 
         <div className={`${styles.boxesContainer} ${font400.className}`}>
-          <div className={styles.box}>
+          <FadeIn className={styles.box}>
             <div className={styles.boxHeader}>
               <Desktop size={42} color="#6904C2" />
               <h4>Frontend</h4>
@@ -31,9 +33,9 @@ export function Expertise() {
                 best to my projects
               </p>
             </HtmlTag>
-          </div>
+          </FadeIn>
 
-          <div className={styles.box}>
+          <FadeIn delay={700} className={styles.box}>
             <div className={styles.boxHeader}>
               <DeviceMobile size={42} color="#F64740" />
               <h4>Mobile</h4>
@@ -46,9 +48,9 @@ export function Expertise() {
                 solutions, always seeking to innovate and expand my knowledge
               </p>
             </HtmlTag>
-          </div>
+          </FadeIn>
 
-          <div className={styles.box}>
+          <FadeIn delay={900} className={styles.box}>
             <div className={styles.boxHeader}>
               <TerminalWindow size={48} color="#00875F" />
               <h4>Software</h4>
@@ -61,7 +63,7 @@ export function Expertise() {
                 Git, GitHub, Docker, among others...
               </p>
             </HtmlTag>
-          </div>
+          </FadeIn>
         </div>
       </HtmlTag>
     </div>
