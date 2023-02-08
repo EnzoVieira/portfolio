@@ -1,3 +1,13 @@
+:root {
+  --purple: #6904C2;
+  --green: #00875F;
+  --red: #F64740;
+
+  /* text color */
+  --white: #fff;
+  --placeholder: #989898;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

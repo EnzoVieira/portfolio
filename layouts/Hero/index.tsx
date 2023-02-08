@@ -18,8 +18,6 @@ export function Hero() {
 
     setColumns(columns)
     setRows(rows)
-
-    console.log(columns, rows)
   }
 
   function animationTimeLine() {

@@ -1,9 +1,14 @@
-import { Poppins } from "@next/font/google"
+import { Poppins, Source_Code_Pro } from "@next/font/google"
+import { Desktop, DeviceMobile, TerminalWindow } from "phosphor-react"
 
 import styles from "@/styles/Home.module.scss"
 import { Hero } from "@/layouts/Hero"
+import { HtmlTag } from "@/components/HtmlTag"
 
 const font600 = Poppins({ weight: "600", subsets: ["latin"] })
+const font400 = Poppins({ weight: "400", subsets: ["latin"] })
+
+const codeFont400 = Source_Code_Pro({ weight: "400", subsets: ["latin"] })
 
 export default function Home() {
   return (
@@ -13,7 +18,63 @@ export default function Home() {
       </section>
 
       <section className={styles.snapSection}>
-        <h2 className={`${font600.className} ${styles.title}`}>My Expertise</h2>
+        <div className={styles.expertiseContainer}>
+          <HtmlTag tag="exp" variant="large">
+            <h2 className={`${font600.className} ${styles.title}`}>
+              My Expertise
+            </h2>
+
+            <div className={`${styles.boxesContainer} ${font400.className}`}>
+              <div className={styles.box}>
+                <div className={styles.boxHeader}>
+                  <Desktop size={42} color="#6904C2" />
+                  <h4>Frontend</h4>
+                </div>
+
+                <HtmlTag tag="p">
+                  <p className={codeFont400.className}>
+                    Passionate Frontend developer, experienced in ReactJS,
+                    NextJS and UI/UX. technical skills with good design
+                    practices to produce efficient and user-friendly solutions
+                    are my qualities. I always seek to innovate and improve my
+                    skills to offer the best to my projects
+                  </p>
+                </HtmlTag>
+              </div>
+
+              <div className={styles.box}>
+                <div className={styles.boxHeader}>
+                  <DeviceMobile size={42} color="#F64740" />
+                  <h4>Mobile</h4>
+                </div>
+
+                <HtmlTag tag="p">
+                  <p className={codeFont400.className}>
+                    Skilled programmer in mobile development with expertise in
+                    React Native and Expo. Focus on producing efficient and high
+                    quality solutions, always seeking to innovate and expand my
+                    knowledge
+                  </p>
+                </HtmlTag>
+              </div>
+
+              <div className={styles.box}>
+                <div className={styles.boxHeader}>
+                  <TerminalWindow size={48} color="#00875F" />
+                  <h4>Software</h4>
+                </div>
+
+                <HtmlTag tag="p">
+                  <p className={codeFont400.className}>
+                    Mastered the functional, object-oriented and imperative
+                    paradigm. In addition to being very familiar with tools such
+                    as Git, GitHub, Docker, among others...
+                  </p>
+                </HtmlTag>
+              </div>
+            </div>
+          </HtmlTag>
+        </div>
       </section>
     </div>
   )
