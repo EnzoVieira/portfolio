@@ -20,12 +20,12 @@ export function Expertise() {
         <div className={`${styles.boxesContainer} ${font400.className}`}>
           <FadeIn className={styles.box}>
             <div className={styles.boxHeader}>
-              <Desktop size={42} color="#6904C2" />
+              <Desktop size={32} color="#6904C2" />
               <h4>Frontend</h4>
             </div>
 
             <HtmlTag tag="p">
-              <p className={codeFont400.className}>
+              <p className={`${codeFont400.className} ${styles.description}`}>
                 Passionate Frontend developer, experienced in ReactJS, NextJS
                 and UI/UX. technical skills with good design practices to
                 produce efficient and user-friendly solutions are my qualities.
@@ -37,12 +37,12 @@ export function Expertise() {
 
           <FadeIn delay={700} className={styles.box}>
             <div className={styles.boxHeader}>
-              <DeviceMobile size={42} color="#F64740" />
+              <DeviceMobile size={32} color="#F64740" />
               <h4>Mobile</h4>
             </div>
 
             <HtmlTag tag="p">
-              <p className={codeFont400.className}>
+              <p className={`${codeFont400.className} ${styles.description}`}>
                 Skilled programmer in mobile development with expertise in React
                 Native and Expo. Focus on producing efficient and high quality
                 solutions, always seeking to innovate and expand my knowledge
@@ -52,12 +52,12 @@ export function Expertise() {
 
           <FadeIn delay={900} className={styles.box}>
             <div className={styles.boxHeader}>
-              <TerminalWindow size={48} color="#00875F" />
+              <TerminalWindow size={32} color="#00875F" />
               <h4>Software</h4>
             </div>
 
             <HtmlTag tag="p">
-              <p className={codeFont400.className}>
+              <p className={`${codeFont400.className} ${styles.description}`}>
                 Mastered the functional, object-oriented and imperative
                 paradigm. In addition to being very familiar with tools such as
                 Git, GitHub, Docker, among others...
