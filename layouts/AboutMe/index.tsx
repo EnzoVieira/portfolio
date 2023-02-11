@@ -6,7 +6,7 @@ import { Poppins } from "@next/font/google"
 import styles from "./AboutMe.module.scss"
 
 // Images
-import portrait from "@/public/portrait-transparent.png"
+import portrait from "@/public/portrait-transparent2.png"
 import githubLogo from "@/public/logos/githubLogo.svg"
 import linkedinLogo from "@/public/logos/linkedinLogo.png"
 import instagramLogo from "@/public/logos/instagramLogo.svg"
