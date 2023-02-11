@@ -1,11 +1,52 @@
+// Small tablets and large smartphones (landscape view)
+$screen-sm-max: 576px;
+
+// Small tablets (portrait view)
+$screen-md-max: 768px;
+
+// Tablets and small desktops
+$screen-lg-max: 1080px;
+
+// Small devices
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (max-width: #{$screen-md-max}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (max-width: #{$screen-lg-max}) {
+    @content;
+  }
+}
+
 .aboutMeContainer {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 2fr 1fr 1fr;
   grid-template-areas: 
-    "aside header2"
+    "aside header"
     "aside description"
     "aside footer";
+
+  @include sm {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+      "aside"
+      "header"
+      "description"
+      "footer";
+    padding: 4rem 1.5rem 1.5rem;
+  }
 
   height: 100%;
   max-width: 90vw;
@@ -15,9 +56,16 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    grid-area: header2;
+    grid-area: header;
 
     font-size: 4.4rem;
+
+    @include md {
+      justify-content: flex-start;
+      align-items: center;
+
+      font-size: 2.2rem;
+    }
   }
 
   .aside {
@@ -31,16 +79,59 @@
     grid-area: description;
     text-align: end;
     line-height: 2rem;
+
+    @include sm {
+      text-align: initial;
+      line-height: 1.4rem;
+    }
   }
 
   .footer {
     display: flex;
     justify-content: flex-end;
+
+    & > div {
+      height: 40px;
+      color: white;
+      display: flex;
+      align-items: flex-end;
+      margin-left: 24px;
+
+      img {
+        margin-right: 8px;
+
+        @include sm {
+          scale: .8;
+          margin-right: 2px;
+        }
+      }
+
+      a {
+        color: white;
+      }
+    }
+
+    @include md {
+      justify-content: space-between;
+      align-items: center;
+
+      & > div {
+        margin-left: 0px;
+      }
+
+      a {
+        font-size: 14px;
+      }
+    }
   }
 }
 
 .portraitContainer {
   scale: 1.6;
+
+  @include sm {
+    scale: 1;
+  }
 
   display: flex;
   justify-content: center;
