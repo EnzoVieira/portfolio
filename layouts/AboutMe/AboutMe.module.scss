@@ -79,10 +79,12 @@ $screen-lg-max: 1080px;
     grid-area: description;
     text-align: end;
     line-height: 2rem;
+    margin-top: 2rem;
 
     @include sm {
       text-align: initial;
       line-height: 1.4rem;
+      margin-top: 10px;
     }
   }
 
