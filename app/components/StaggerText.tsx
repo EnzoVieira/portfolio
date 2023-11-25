@@ -1,15 +1,16 @@
 "use client";
 
-import { ReactNode, useLayoutEffect, useRef } from "react";
+import { HTMLAttributes, ReactNode, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { CustomEase } from "gsap/all";
 import SplitType from "split-type";
+import { classNames } from "@/utils/classNames";
 
-interface IProps {
+interface IProps extends HTMLAttributes<HTMLHeadingElement> {
   children: ReactNode;
 }
 
-export function StaggerText({ children }: IProps) {
+export function StaggerText({ children, className = "", ...rest }: IProps) {
   const textRef = useRef<HTMLHeadingElement>(null);
 
   useLayoutEffect(() => {
@@ -21,7 +22,7 @@ export function StaggerText({ children }: IProps) {
       gsap.from(split.chars, {
         opacity: 0,
         y: 115,
-        stagger: 0.04,
+        stagger: 0.05,
         delay: 0.2,
         duration: 0.8,
         ease: CustomEase.create("custom", "0.62,0.05,0.01,0.99"),
@@ -34,7 +35,14 @@ export function StaggerText({ children }: IProps) {
   }, []);
 
   return (
-    <h1 ref={textRef} className="text-5xl uppercase font-medium">
+    <h1
+      ref={textRef}
+      className={classNames(
+        "text-5xl uppercase font-medium tracking-tight lg:text-8xl",
+        className,
+      )}
+      {...rest}
+    >
       {children}
     </h1>
   );

@@ -4,26 +4,31 @@ import { StaggerParagraph } from "./components/StaggerParagraph";
 
 export default function Home() {
   return (
-    <main className="pt-8 grid gap-5">
-      <StaggerParagraph>
+    <main className="pt-8 grid gap-5 lg:h-[calc(100vh_-_72px)] lg:grid-cols-12 lg:auto-rows-fr">
+      <StaggerParagraph className="lg:row-start-3 lg:col-span-6 lg:self-center">
         Welcome to my website portfolio. I specialize in creating clean and
         user-friendly web experiences that leave a lasting impression.
       </StaggerParagraph>
 
-      <StaggerText>impactful web developer</StaggerText>
+      <StaggerText className="lg:col-span-12">
+        impactful <br className="hidden lg:block" /> web developer
+      </StaggerText>
 
-      <div className="w-full h-80 relative overflow-hidden">
+      <div className="w-full h-80 lg:h-full relative overflow-hidden lg:col-span-5 lg:row-start-2">
         <Image
           id="image"
-          src="/me.JPEG"
+          src="/me.jpg"
           alt="me"
-          layout="fill"
-          objectFit="cover"
-          className="animate-reveal-image object-bottom"
+          fill
+          style={{ objectFit: "cover" }}
+          className="animate-reveal-image object-left lg:object-top"
+          priority
         />
       </div>
 
-      <StaggerText>Enzo Vieira</StaggerText>
+      <StaggerText className="lg:row-start-3 lg:col-span-4 lg:col-start-9">
+        Enzo Vieira
+      </StaggerText>
     </main>
   );
 }

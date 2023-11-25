@@ -17,6 +17,7 @@ body {
 }
 
 .line {
+  display: inline;
   text-wrap: nowrap;
   clip-path: inset(0 0 .12em);
 }

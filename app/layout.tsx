@@ -19,7 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={classNames(montserrat.className, "px-4 w-screen")}>
+      <body
+        className={classNames(
+          montserrat.className,
+          "px-4 w-screen max-w-6xl mx-auto",
+        )}
+      >
         <header className="-translate-y-full animate-translate-header py-6 justify-between flex font-medium">
           <LogoLink />
 
