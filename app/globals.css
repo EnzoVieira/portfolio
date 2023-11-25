@@ -10,3 +10,17 @@
 body {
   background: var(--background-color)
 }
+
+.word {
+  text-wrap: nowrap;
+  clip-path: inset(0 0 .12em);
+}
+
+.line {
+  text-wrap: nowrap;
+  clip-path: inset(0 0 .12em);
+}
+
+#image {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+}

@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { classNames } from "@/utils/classNames";
 import { LogoLink } from "./components/LogoLink";
 import { HeaderMenu } from "./components/HeaderMenu";
 
-const inter = Inter({ subsets: ["latin"] });
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={classNames(montserrat.className, "px-4")}>
+      <body className={classNames(montserrat.className, "px-4 w-screen")}>
         <header className="-translate-y-full animate-translate-header py-6 justify-between flex font-medium">
           <LogoLink />
 
