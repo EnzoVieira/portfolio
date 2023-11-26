@@ -1,6 +1,12 @@
 "use client";
 
-import { HTMLAttributes, ReactNode, useLayoutEffect, useRef } from "react";
+import {
+  ElementType,
+  HTMLAttributes,
+  ReactNode,
+  useLayoutEffect,
+  useRef,
+} from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/all";
@@ -10,9 +16,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 interface IProps extends HTMLAttributes<HTMLHeadingElement> {
   children: ReactNode;
+  as?: ElementType;
 }
 
-export function TriggerStaggerText({ children, ...rest }: IProps) {
+export function TriggerStaggerText({
+  children,
+  as: Tag = "h4",
+  ...rest
+}: IProps) {
   const textRef = useRef<HTMLHeadingElement>(null);
 
   useLayoutEffect(() => {
@@ -40,8 +51,8 @@ export function TriggerStaggerText({ children, ...rest }: IProps) {
   }, []);
 
   return (
-    <h2 ref={textRef} {...rest}>
+    <Tag ref={textRef} {...rest}>
       {children}
-    </h2>
+    </Tag>
   );
 }

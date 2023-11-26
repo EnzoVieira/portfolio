@@ -34,14 +34,21 @@ const projects = [
 export function PortfolioList() {
   return (
     <section className="pt-16">
-      <header className="flex flex-col gap-3">
-        <span className="font-medium">My Portfolio</span>
+      <header>
+        <TriggerStaggerParagraph as="span" className="font-medium">
+          My Portfolio
+        </TriggerStaggerParagraph>
 
-        <h3 className="text-4xl font-medium lg:text-6xl">
+        <TriggerStaggerText
+          as="h3"
+          className="text-4xl font-medium lg:text-6xl lg:leading-relaxed"
+        >
           Web Developer Showcase
-        </h3>
+        </TriggerStaggerText>
 
-        <p>Check out my latest web development projects.</p>
+        <TriggerStaggerParagraph>
+          Check out my latest web development projects.
+        </TriggerStaggerParagraph>
       </header>
 
       <ul className="grid gap-16 pt-20">
@@ -72,7 +79,9 @@ export function PortfolioList() {
                       key={tag}
                       className="flex items-center bg-gray-300 px-2 py-1 text-xs"
                     >
-                      <TriggerStaggerParagraph>{tag}</TriggerStaggerParagraph>
+                      <TriggerStaggerParagraph as="span">
+                        {tag}
+                      </TriggerStaggerParagraph>
                     </li>
                   ))}
                 </ul>

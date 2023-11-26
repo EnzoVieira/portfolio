@@ -1,15 +1,26 @@
 "use client";
 
-import { HTMLAttributes, ReactNode, useLayoutEffect, useRef } from "react";
+import {
+  ElementType,
+  HTMLAttributes,
+  ReactNode,
+  useLayoutEffect,
+  useRef,
+} from "react";
 import gsap from "gsap";
 import { CustomEase } from "gsap/all";
 import SplitType from "split-type";
 
 interface IProps extends HTMLAttributes<HTMLParagraphElement> {
   children: ReactNode;
+  as?: ElementType;
 }
 
-export function TriggerStaggerParagraph({ children, ...rest }: IProps) {
+export function TriggerStaggerParagraph({
+  children,
+  as: Tag = "p",
+  ...rest
+}: IProps) {
   const textRef = useRef<HTMLParagraphElement>(null);
 
   useLayoutEffect(() => {
@@ -37,8 +48,8 @@ export function TriggerStaggerParagraph({ children, ...rest }: IProps) {
   }, []);
 
   return (
-    <p ref={textRef} {...rest}>
+    <Tag ref={textRef} {...rest}>
       {children}
-    </p>
+    </Tag>
   );
 }
