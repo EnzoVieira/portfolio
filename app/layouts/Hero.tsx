@@ -21,7 +21,7 @@ export function Hero() {
           alt="me"
           fill
           style={{ objectFit: "cover" }}
-          className="animate-reveal-image object-left lg:object-top"
+          className="animate-reveal-image object-center lg:object-top"
           priority
         />
       </div>
