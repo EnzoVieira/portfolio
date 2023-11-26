@@ -37,44 +37,52 @@ export function PortfolioList() {
       <header className="flex flex-col gap-3">
         <span className="font-medium">My Portfolio</span>
 
-        <h3 className="text-4xl font-medium">Web Developer Showcase</h3>
+        <h3 className="text-4xl font-medium lg:text-6xl">
+          Web Developer Showcase
+        </h3>
 
         <p>Check out my latest web development projects.</p>
       </header>
 
-      <ul className="grid gap-8 pt-8">
+      <ul className="grid gap-16 pt-20">
         {projects.map((project) => (
-          <article key={project.name} className="grid gap-2">
-            <div className="aspect-[4/3] relative overflow-hidden">
-              <ParalaxImage
-                src={project.image}
-                alt={project.description}
-                fill
-                style={{ objectFit: "cover" }}
-              />
-            </div>
+          <div key={project.name} className="lg:h-screen h-fit">
+            <article className="grid gap-2 lg:grid-cols-2 lg:gap-4">
+              <div className="aspect-[4/3] relative overflow-hidden lg:aspect-square lg:col-start-2">
+                <ParalaxImage
+                  src={project.image}
+                  alt={project.description}
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
 
-            <TriggerStaggerText className="text-2xl font-medium">
-              {project.name}
-            </TriggerStaggerText>
+              <div className="lg:col-start-1 lg:row-start-1 lg:sticky lg:top-[calc(50vh-60px)] lg:left-0 lg:h-fit">
+                <TriggerStaggerText className="text-2xl font-medium lg:text-4xl lg:leading-relaxed">
+                  {project.name}
+                </TriggerStaggerText>
 
-            <TriggerStaggerParagraph>
-              {project.description}
-            </TriggerStaggerParagraph>
+                <TriggerStaggerParagraph>
+                  {project.description}
+                </TriggerStaggerParagraph>
 
-            <ul className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <li
-                  key={tag}
-                  className="flex items-center bg-gray-300 px-2 py-1 text-xs"
-                >
-                  <TriggerStaggerParagraph>{tag}</TriggerStaggerParagraph>
-                </li>
-              ))}
-            </ul>
+                <ul className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <li
+                      key={tag}
+                      className="flex items-center bg-gray-300 px-2 py-1 text-xs"
+                    >
+                      <TriggerStaggerParagraph>{tag}</TriggerStaggerParagraph>
+                    </li>
+                  ))}
+                </ul>
 
-            <button className="mt-4 text-start">View project &gt;</button>
-          </article>
+                <button className="mt-4 text-start lg:mt-16">
+                  View project &gt;
+                </button>
+              </div>
+            </article>
+          </div>
         ))}
       </ul>
     </section>
