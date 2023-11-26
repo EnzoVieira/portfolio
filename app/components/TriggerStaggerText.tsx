@@ -1,16 +1,19 @@
 "use client";
 
 import { HTMLAttributes, ReactNode, useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/all";
 import SplitType from "split-type";
 
-interface IProps extends HTMLAttributes<HTMLParagraphElement> {
+gsap.registerPlugin(ScrollTrigger);
+
+interface IProps extends HTMLAttributes<HTMLHeadingElement> {
   children: ReactNode;
 }
 
-export function StaggerParagraph({ children, ...rest }: IProps) {
-  const textRef = useRef<HTMLParagraphElement>(null);
+export function TriggerStaggerText({ children, ...rest }: IProps) {
+  const textRef = useRef<HTMLHeadingElement>(null);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -18,11 +21,14 @@ export function StaggerParagraph({ children, ...rest }: IProps) {
 
       let split = SplitType.create(textRef.current);
 
-      gsap.from(split.words, {
+      gsap.from(split.chars, {
+        scrollTrigger: {
+          trigger: split.chars,
+          start: "top 100%",
+        },
         opacity: 0,
-        y: 75,
-        stagger: 0.03,
-        delay: 0.2,
+        y: 115,
+        stagger: 0.05,
         duration: 0.8,
         ease: CustomEase.create("custom", "0.62,0.05,0.01,0.99"),
       });
@@ -34,8 +40,8 @@ export function StaggerParagraph({ children, ...rest }: IProps) {
   }, []);
 
   return (
-    <p ref={textRef} {...rest}>
+    <h2 ref={textRef} {...rest}>
       {children}
-    </p>
+    </h2>
   );
 }

@@ -9,7 +9,7 @@ interface IProps extends HTMLAttributes<HTMLParagraphElement> {
   children: ReactNode;
 }
 
-export function StaggerParagraph({ children, ...rest }: IProps) {
+export function TriggerStaggerParagraph({ children, ...rest }: IProps) {
   const textRef = useRef<HTMLParagraphElement>(null);
 
   useLayoutEffect(() => {
@@ -19,10 +19,13 @@ export function StaggerParagraph({ children, ...rest }: IProps) {
       let split = SplitType.create(textRef.current);
 
       gsap.from(split.words, {
+        scrollTrigger: {
+          trigger: split.chars,
+          start: "top 100%",
+        },
         opacity: 0,
         y: 75,
         stagger: 0.03,
-        delay: 0.2,
         duration: 0.8,
         ease: CustomEase.create("custom", "0.62,0.05,0.01,0.99"),
       });
