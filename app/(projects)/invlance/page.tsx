@@ -1,37 +1,53 @@
 import Image from "next/image";
 
+import { StaggerParagraph } from "@/app/components/StaggerParagraph";
+import { StaggerText } from "@/app/components/StaggerText";
+
 export default function InvlancePage() {
   return (
     <main>
-      <h1 className="text-5xl">Invlance</h1>
+      <StaggerText className="normal-case">Invlance</StaggerText>
 
       <dl className="pt-10">
-        <dt className="text-xs opacity-50 uppercase border-b-[1px] border-black border-opacity-25 pb-4 mb-4">
-          Role / Services
+        <dt className="text-xs opacity-50 uppercase">
+          <StaggerParagraph>Role / Services</StaggerParagraph>
         </dt>
-        <dd className="pb-8">Design &amp; Development</dd>
+        <div className="scale-x-0 h-[1px] w-full bg-black opacity-[.15] animate-divider-scale origin-left my-4" />
+        <dd className="pb-8">
+          <StaggerParagraph>Design &amp; Development</StaggerParagraph>
+        </dd>
 
-        <dt className="text-xs opacity-50 uppercase border-b-[1px] border-black border-opacity-25 pb-4 mb-4">
-          Briefing
+        <dt className="text-xs opacity-50 uppercase ">
+          <StaggerParagraph>Briefing</StaggerParagraph>
         </dt>
-        <dd className="pb-8">Investment portfolio planning application</dd>
+        <div className="scale-x-0 h-[1px] w-full bg-black opacity-[.15] animate-divider-scale origin-left my-4" />
+        <dd className="pb-8">
+          <StaggerParagraph>
+            Investment portfolio planning application
+          </StaggerParagraph>
+        </dd>
 
-        <dt className="text-xs opacity-50 uppercase border-b-[1px] border-black border-opacity-25 pb-4 mb-4">
-          Year
+        <dt className="text-xs opacity-50 uppercase">
+          <StaggerParagraph>Year</StaggerParagraph>
         </dt>
-        <dd className="pb-8">2020</dd>
+        <div className="scale-x-0 h-[1px] w-full bg-black opacity-[.15] animate-divider-scale origin-left my-4" />
+        <dd className="pb-8">
+          <StaggerParagraph>2020</StaggerParagraph>
+        </dd>
       </dl>
 
-      <p className="pb-2">
+      <StaggerParagraph className="pb-2">
         The premise of the project is to convey a feeling of technology and
         confidence. To be an application for investors who seek security when
         choosing their investments. The investor only needs to choose the shares
         they want to evaluate and define some evaluation criteria for each one.
         After that, based on the criteria score, the application automatically
         balanced the person&apos;s investment portfolio.
-      </p>
+      </StaggerParagraph>
 
-      <div className="text-8xl text-center pb-20">&darr;</div>
+      <StaggerParagraph className="text-8xl text-center pb-20">
+        &darr;
+      </StaggerParagraph>
 
       <section className="flex items-center bg-[#8A05FF] w-screen -mx-4 py-24">
         <div className="relative w-full h-60">
