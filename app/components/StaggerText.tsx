@@ -45,7 +45,7 @@ export function StaggerText({ children, className = "", ...rest }: IProps) {
       ref={textRef}
       id="title"
       className={classNames(
-        "text-5xl uppercase font-medium tracking-tight lg:text-8xl",
+        "text-4xl uppercase font-medium tracking-tight xs:text-5xl lg:text-8xl",
         className,
       )}
       {...rest}

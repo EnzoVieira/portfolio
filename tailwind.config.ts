@@ -8,11 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "300px",
+      },
+
       animation: {
         "translate-header":
           "translate-header 1.25s var(--primary-curve) .8s forwards",
         "reveal-image": "reveal-image 2.25s var(--primary-curve) .8s forwards",
-        "divider-scale": "divider-scale .8s var(--primary-curve) 1.5s forwards",
+        "divider-scale": "divider-scale .8s var(--primary-curve) .5s forwards",
+        "fade-in": "fade-in .8s var(--primary-curve) .8s forwards",
       },
 
       keyframes: {
@@ -33,6 +38,11 @@ const config: Config = {
         "divider-scale": {
           "0%": { transform: "scale3d(0, 1, 1)" },
           "100%": { transform: "scale3d(1,1,1)" },
+        },
+
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
       },
     },
