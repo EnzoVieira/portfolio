@@ -25,3 +25,7 @@ body {
 #image {
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
 }
+
+#title, #paragraph {
+  visibility: hidden;
+}
