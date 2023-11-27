@@ -1,6 +1,7 @@
 import { TriggerStaggerText } from "../components/TriggerStaggerText";
 import { TriggerStaggerParagraph } from "../components/TriggerStaggerParagraph";
 import { ParalaxImage } from "../components/ParalaxImage";
+import Link from "next/link";
 
 const projects = [
   {
@@ -88,9 +89,12 @@ export function PortfolioList() {
                 ))}
               </ul>
 
-              <button className="mt-4 text-start lg:mt-16">
+              <Link
+                href={`/${project.name.toLowerCase().replace(" ", "-")}`}
+                className="block mt-4 text-start lg:mt-16"
+              >
                 View project &gt;
-              </button>
+              </Link>
             </div>
           </article>
         ))}
