@@ -3,7 +3,6 @@
 import { ComponentProps, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
-import { CustomEase } from "gsap/all";
 
 import { classNames } from "@/utils/classNames";
 
@@ -16,23 +15,12 @@ export function ParalaxImage({ alt, className = "", ...rest }: IProps) {
     let ctx = gsap.context(() => {
       if (!imageRef.current) return;
 
-      // gsap.to(imageRef.current, {
-      //   scrollTrigger: {
-      //     scrub: 1,
-      //   },
-      //   yPercent: -25,
-      // });
-
-      gsap.from(imageRef.current, {
+      gsap.to(imageRef.current, {
         scrollTrigger: {
-          trigger: imageRef.current,
-          start: "top 100%",
+          scrub: 1,
+          start: "top bottom", // when the top of the trigger hits the bottom of the viewport
         },
-        duration: 2.25,
-        ease: CustomEase.create("custom", "0.62,0.05,0.01,0.99"),
-        // clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-        opacity: 0,
-        yPercent: 50,
+        yPercent: -40,
       });
     }, imageRef);
 
@@ -43,7 +31,7 @@ export function ParalaxImage({ alt, className = "", ...rest }: IProps) {
     <Image
       ref={imageRef}
       alt={alt}
-      className={classNames(className)}
+      className={classNames(className, "scale-[1.4] origin-top")}
       {...rest}
     />
   );
