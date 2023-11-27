@@ -6,7 +6,7 @@ export function HeaderMenu() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const isProjectPage = pathname === "/invlance";
+  const isProjectPage = pathname !== "/";
 
   return isProjectPage ? (
     <button onClick={() => router.push("/")}>Go back</button>

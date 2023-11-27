@@ -56,9 +56,11 @@ export default async function InvlancePage({ params }: ProjectProps) {
 
   return (
     <main>
-      <StaggerText className="normal-case">Invlance</StaggerText>
+      <StaggerText className="normal-case leading-relaxed">
+        {project.title}
+      </StaggerText>
 
-      <dl className="pt-10">
+      <dl className="pt-8">
         <dt className="text-xs opacity-50 uppercase">
           <StaggerParagraph>Role / Services</StaggerParagraph>
         </dt>
@@ -73,6 +75,23 @@ export default async function InvlancePage({ params }: ProjectProps) {
         <div className="scale-x-0 h-[1px] w-full bg-black opacity-[.15] animate-divider-scale origin-left my-4" />
         <dd className="pb-8">
           <StaggerParagraph>{project.briefing}</StaggerParagraph>
+        </dd>
+
+        <dt className="text-xs opacity-50 uppercase">
+          <StaggerParagraph>Tags</StaggerParagraph>
+        </dt>
+        <div className="scale-x-0 h-[1px] w-full bg-black opacity-[.15] animate-divider-scale origin-left my-4" />
+        <dd className="pb-8">
+          <ul className="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <li
+                key={tag}
+                className="flex items-center bg-gray-300 px-2 py-1 text-xs"
+              >
+                <StaggerParagraph>{tag}</StaggerParagraph>
+              </li>
+            ))}
+          </ul>
         </dd>
 
         <dt className="text-xs opacity-50 uppercase">

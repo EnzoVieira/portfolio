@@ -33,6 +33,10 @@ export const Project = defineDocumentType(() => ({
   filePathPattern: `projects/**/*.mdx`,
   contentType: "mdx",
   fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
     role: {
       type: "string",
       required: true,
@@ -46,6 +50,11 @@ export const Project = defineDocumentType(() => ({
     },
     description: {
       type: "string",
+      required: true,
+    },
+    tags: {
+      type: "list",
+      of: { type: "string" },
       required: true,
     },
   },
