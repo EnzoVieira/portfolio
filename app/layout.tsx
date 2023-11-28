@@ -5,6 +5,7 @@ import "./globals.css";
 import { classNames } from "@/utils/classNames";
 import { LogoLink } from "./components/LogoLink";
 import { HeaderMenu } from "./components/HeaderMenu";
+import { LocalTimeText } from "./components/LocalTimeText";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -18,25 +19,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  function getLocalDateFormatted() {
-    // Obtém a data e hora locais
-    const now = new Date();
-
-    // Cria um objeto Intl.DateTimeFormat com o fuso horário de Lisboa (GMT+1)
-    const options = { timeZone: "Europe/Lisbon" };
-    const datetimeToFormat = new Intl.DateTimeFormat("en-US", {
-      hour: "2-digit",
-      minute: "2-digit",
-      timeZoneName: "short",
-      ...options,
-    });
-
-    // Formata a data e hora
-    const formattedDate = datetimeToFormat.format(now);
-
-    return formattedDate;
-  }
-
   return (
     <html lang="pt-BR">
       <body
@@ -83,7 +65,7 @@ export default function RootLayout({
 
             <div>
               <h5 className="text-xs uppercase opacity-50 pb-2">Local Time</h5>
-              <p>{getLocalDateFormatted()}+1</p>
+              <LocalTimeText />
             </div>
           </div>
         </footer>
