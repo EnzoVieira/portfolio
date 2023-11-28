@@ -6,7 +6,13 @@ export function ContactMe() {
       <div className="flex items-baseline gap-2">
         <div>
           <div className="relative w-8 h-8 rounded-full overflow-hidden xs:h-10 xs:w-10">
-            <Image src="/me.JPG" alt="me" fill style={{ objectFit: "cover" }} />
+            <Image
+              src="/me.jpg"
+              alt="me"
+              fill
+              style={{ objectFit: "cover" }}
+              priority
+            />
           </div>
         </div>
 
