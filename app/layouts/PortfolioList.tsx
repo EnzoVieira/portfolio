@@ -2,6 +2,7 @@ import { TriggerStaggerText } from "../components/TriggerStaggerText";
 import { TriggerStaggerParagraph } from "../components/TriggerStaggerParagraph";
 import { ParalaxImage } from "../components/ParalaxImage";
 import Link from "next/link";
+import { TriggerFadeIn } from "../components/TriggerFadeIn";
 
 const projects = [
   {
@@ -78,14 +79,13 @@ export function PortfolioList() {
 
               <ul className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <li
+                  <TriggerFadeIn
+                    as="li"
                     key={tag}
                     className="flex items-center bg-gray-300 px-2 py-1 text-xs"
                   >
-                    <TriggerStaggerParagraph as="span">
-                      {tag}
-                    </TriggerStaggerParagraph>
-                  </li>
+                    {tag}
+                  </TriggerFadeIn>
                 ))}
               </ul>
 
@@ -93,7 +93,7 @@ export function PortfolioList() {
                 href={`/${project.name.toLowerCase().replace(" ", "-")}`}
                 className="block mt-4 text-start lg:mt-16"
               >
-                View project &gt;
+                <TriggerFadeIn>View project &gt;</TriggerFadeIn>
               </Link>
             </div>
           </article>

@@ -6,6 +6,7 @@ import { allProjects } from "contentlayer/generated";
 import { StaggerParagraph } from "@/app/components/StaggerParagraph";
 import { StaggerText } from "@/app/components/StaggerText";
 import { Mdx } from "@/components/mdx-components";
+import { FadeIn } from "@/app/components/FadeIn";
 
 interface ProjectProps {
   params: {
@@ -84,11 +85,10 @@ export default async function InvlancePage({ params }: ProjectProps) {
         <dd className="pb-8">
           <ul className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
-              <li
-                key={tag}
-                className="flex items-center bg-gray-300 px-2 py-1 text-xs"
-              >
-                <StaggerParagraph>{tag}</StaggerParagraph>
+              <li key={tag}>
+                <FadeIn className="flex items-center bg-gray-300 px-2 py-1 text-xs">
+                  {tag}
+                </FadeIn>
               </li>
             ))}
           </ul>
