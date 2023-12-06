@@ -37,6 +37,16 @@ export function ParalaxImage({ alt, className = "", ...rest }: IProps) {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         ease: CustomEase.create("custom", "0.62,0.05,0.01,0.99"),
       });
+
+      gsap.from(divRef.current, {
+        scrollTrigger: {
+          trigger: divRef.current,
+          start: "top 70%",
+        },
+        duration: 4,
+        filter: "blur(15px)",
+        ease: "expo.out",
+      });
     }, imageRef);
 
     return () => ctx.revert();
