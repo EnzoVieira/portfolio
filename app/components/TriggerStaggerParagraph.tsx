@@ -32,7 +32,7 @@ export function TriggerStaggerParagraph({
       gsap.from(split.words, {
         scrollTrigger: {
           trigger: split.chars,
-          start: "top 100%",
+          start: "top 90%",
         },
         opacity: 0,
         y: 75,

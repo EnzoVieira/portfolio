@@ -59,14 +59,12 @@ export function PortfolioList() {
             key={project.name}
             className="grid gap-2 lg:grid-cols-2 lg:gap-4"
           >
-            <div className="w-full aspect-[4/3] relative overflow-hidden lg:aspect-[3/4] lg:col-start-2 lg:h-[150vh]">
-              <ParalaxImage
-                src={project.image}
-                alt={project.description}
-                fill
-                style={{ objectFit: "cover" }}
-              />
-            </div>
+            <ParalaxImage
+              src={project.image}
+              alt={project.description}
+              fill
+              style={{ objectFit: "cover" }}
+            />
 
             <div className="lg:col-start-1 lg:row-start-1 lg:sticky lg:top-[calc(50vh-(233px/2))] lg:left-0 lg:h-fit">
               <TriggerStaggerText className="text-2xl font-medium lg:text-6xl lg:leading-relaxed">

@@ -10,7 +10,6 @@ import {
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/all";
-import SplitType from "split-type";
 import { classNames } from "@/utils/classNames";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -35,7 +34,7 @@ export function TriggerFadeIn({
       gsap.from(divRef.current, {
         scrollTrigger: {
           trigger: divRef.current,
-          start: "top 100%",
+          start: "top 80%",
         },
         opacity: 0,
         duration: 0.8,
