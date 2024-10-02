@@ -3,6 +3,7 @@ import { TriggerStaggerParagraph } from "../components/TriggerStaggerParagraph";
 import { ParalaxImage } from "../components/ParalaxImage";
 import Link from "next/link";
 import { TriggerFadeIn } from "../components/TriggerFadeIn";
+import { TransitionLink } from "@/components/TransitionLink";
 
 const projects = [
   {
@@ -87,12 +88,12 @@ export function PortfolioList() {
                 ))}
               </ul>
 
-              <Link
+              <TransitionLink
                 href={`/${project.name.toLowerCase().replace(" ", "-")}`}
                 className="block mt-4 text-start lg:mt-16"
               >
                 <TriggerFadeIn>View project &gt;</TriggerFadeIn>
-              </Link>
+              </TransitionLink>
             </div>
           </article>
         ))}

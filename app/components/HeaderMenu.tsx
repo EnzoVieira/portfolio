@@ -1,15 +1,15 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import { TransitionLink } from "@/components/TransitionLink";
+import { usePathname } from "next/navigation";
 
 export function HeaderMenu() {
   const pathname = usePathname();
-  const router = useRouter();
 
   const isProjectPage = pathname !== "/";
 
   return isProjectPage ? (
-    <button onClick={() => router.push("/")}>Go back</button>
+    <TransitionLink href="/">Go back</TransitionLink>
   ) : (
     <button>Menu</button>
   );

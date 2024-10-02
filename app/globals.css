@@ -3,29 +3,61 @@
 @tailwind utilities;
 
 :root {
-  --background-color: #E9EAEB;
-  --primary-curve: cubic-bezier(0.62,0.05,0.01,0.99);
+  --background-color: #e9eaeb;
+  --primary-curve: cubic-bezier(0.62, 0.05, 0.01, 0.99);
+  --page-transition-duration: 2s;
 }
 
 body {
-  background: var(--background-color)
+  background: var(--background-color);
 }
 
 .word {
   text-wrap: nowrap;
-  clip-path: inset(0 0 .12em);
+  clip-path: inset(0 0 0.12em);
 }
 
 .line {
   display: inline;
   text-wrap: nowrap;
-  clip-path: inset(0 0 .12em);
+  clip-path: inset(0 0 0.12em);
 }
 
 #image {
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
 }
 
-#title, #paragraph {
+#title,
+#paragraph {
   visibility: hidden;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 9999;
+
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  pointer-events: none;
+}
+
+body.page-transition::after {
+  animation: navigate var(--page-transition-duration) var(--primary-curve);
+}
+
+@keyframes navigate {
+  0% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+  50% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
 }

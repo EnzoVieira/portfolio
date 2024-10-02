@@ -1,7 +1,5 @@
-"use client";
-
-import Link from "next/link";
+import { TransitionLink } from "@/components/TransitionLink";
 
 export function LogoLink() {
-  return <Link href="/">Enzo Vieira</Link>;
+  return <TransitionLink href="/">Enzo Vieira</TransitionLink>;
 }
