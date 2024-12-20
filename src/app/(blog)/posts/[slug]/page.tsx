@@ -10,7 +10,7 @@ import { Post } from "@/components/Post";
 export async function generateStaticParams() {
   const posts = await client.fetch(POSTS_QUERY);
 
-  return posts.map((post) => ({
+  return posts.map((post: any) => ({
     slug: post?.slug?.current,
   }));
 }

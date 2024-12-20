@@ -53,7 +53,7 @@ export default async function RootLayout({
         <div className="flex justify-between">
           <div>
             <h5 className="text-xs uppercase opacity-50 pb-2">Version</h5>
-            <p>2023 Edition</p>
+            <p>2025 Edition</p>
           </div>
 
           <div>
