@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#0D0D0D",
+      },
+
       screens: {
         xs: "300px",
       },
