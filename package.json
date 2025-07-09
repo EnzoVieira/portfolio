@@ -14,7 +14,7 @@
     "@sanity/vision": "^3.68.1",
     "@vercel/analytics": "^1.1.1",
     "gsap": "^3.12.2",
-    "next": "15.1.2",
+    "next": "15.3.5",
     "next-sanity": "^9.8.28",
     "react": "19.0.0",
     "react-dom": "19.0.0",
