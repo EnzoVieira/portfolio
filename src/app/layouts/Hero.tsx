@@ -1,10 +1,10 @@
-import Image from "next/image";
-import { StaggerText } from "../components/StaggerText";
-import { StaggerParagraph } from "../components/StaggerParagraph";
+import Image from "next/image"
+import { StaggerText } from "../components/StaggerText"
+import { StaggerParagraph } from "../components/StaggerParagraph"
 
 export function Hero() {
   return (
-    <section className="pt-8 grid gap-5 lg:h-[calc(100vh_-_72px)] lg:grid-cols-12 lg:auto-rows-fr">
+    <section className="pt-8 grid gap-5 lg:h-[calc(100vh-72px)] lg:grid-cols-12 lg:auto-rows-fr">
       <StaggerParagraph className="lg:row-start-3 lg:col-span-6 lg:self-center">
         Welcome to my website portfolio. I specialize in creating clean and
         user-friendly web experiences that leave a lasting impression.
@@ -30,5 +30,5 @@ export function Hero() {
         Enzo Vieira
       </StaggerText>
     </section>
-  );
+  )
 }

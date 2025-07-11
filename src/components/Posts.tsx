@@ -1,12 +1,12 @@
 // src/components/Posts.tsx
 
-import { TriggerFadeIn } from "@/app/components/TriggerFadeIn";
-import { POSTS_QUERYResult } from "../../sanity.types";
-import { TransitionLink } from "./TransitionLink";
-import { ParalaxImage } from "@/app/components/ParalaxImage";
-import { TriggerStaggerText } from "@/app/components/TriggerStaggerText";
-import { urlFor } from "@/sanity/lib/image";
-import { TriggerStaggerParagraph } from "@/app/components/TriggerStaggerParagraph";
+import { TriggerFadeIn } from "@/app/components/TriggerFadeIn"
+import { POSTS_QUERYResult } from "../../sanity.types"
+import { TransitionLink } from "./TransitionLink"
+import { ParalaxImage } from "@/app/components/ParalaxImage"
+import { TriggerStaggerText } from "@/app/components/TriggerStaggerText"
+import { urlFor } from "@/sanity/lib/image"
+import { TriggerStaggerParagraph } from "@/app/components/TriggerStaggerParagraph"
 
 export function Posts({ posts }: { posts: POSTS_QUERYResult }) {
   return (
@@ -51,5 +51,5 @@ export function Posts({ posts }: { posts: POSTS_QUERYResult }) {
         </li>
       ))}
     </ul>
-  );
+  )
 }

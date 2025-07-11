@@ -56,7 +56,7 @@ export function ParalaxImage({ alt, className = "", ...rest }: IProps) {
     <div
       id="image"
       ref={divRef}
-      className="w-full aspect-[4/3] relative overflow-hidden lg:aspect-[3/4] lg:col-start-2 lg:h-[150vh]"
+      className="w-full aspect-4/3 relative overflow-hidden lg:aspect-3/4 lg:col-start-2 lg:h-[150vh]"
     >
       <Image
         // id="image"

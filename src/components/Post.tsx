@@ -1,10 +1,10 @@
-import Image from "next/image";
-import { PortableText, PortableTextReactComponents } from "@portabletext/react";
-import { urlFor } from "@/sanity/lib/image";
-import { POST_QUERYResult } from "../../sanity.types";
-import { StaggerText } from "@/app/components/StaggerText";
-import { StaggerParagraph } from "@/app/components/StaggerParagraph";
-import { FadeIn } from "@/app/components/FadeIn";
+import Image from "next/image"
+import { PortableText, PortableTextReactComponents } from "@portabletext/react"
+import { urlFor } from "@/sanity/lib/image"
+import { POST_QUERYResult } from "../../sanity.types"
+import { StaggerText } from "@/app/components/StaggerText"
+import { StaggerParagraph } from "@/app/components/StaggerParagraph"
+import { FadeIn } from "@/app/components/FadeIn"
 
 const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   types: {
@@ -25,20 +25,23 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
       </span>
     ),
   },
-};
+}
 
 export function Post({ post }: { post: POST_QUERYResult }) {
   const { title, mainImage, briefing, body, functionPerformed, categories } =
-    post || {};
+    post || {}
 
   return (
     <main className="">
-      <StaggerText className="normal-case leading-relaxed">{title}</StaggerText>
+      <StaggerText className="normal-case">{title}</StaggerText>
       <dl className="pt-8 flex-1">
         <dt className="text-xs opacity-50 uppercase">
           <StaggerParagraph>Role / Services</StaggerParagraph>
         </dt>
-        <div className="scale-x-0 h-[1px] w-full bg-black opacity-[.15] animate-divider-scale origin-left my-4" />
+        <div
+          className="h-px w-full bg-black opacity-[.15] animate-divider-scale origin-left my-4"
+          style={{ transform: "scaleX(0)" }}
+        />
         <dd className="pb-8">
           <StaggerParagraph>{functionPerformed}</StaggerParagraph>
         </dd>
@@ -46,7 +49,10 @@ export function Post({ post }: { post: POST_QUERYResult }) {
         <dt className="text-xs opacity-50 uppercase ">
           <StaggerParagraph>Briefing</StaggerParagraph>
         </dt>
-        <div className="scale-x-0 h-[1px] w-full bg-black opacity-[.15] animate-divider-scale origin-left my-4" />
+        <div
+          className="h-px w-full bg-black opacity-[.15] animate-divider-scale origin-left my-4"
+          style={{ transform: "scaleX(0)" }}
+        />
         <dd className="pb-8">
           <StaggerParagraph>{briefing}</StaggerParagraph>
         </dd>
@@ -54,7 +60,10 @@ export function Post({ post }: { post: POST_QUERYResult }) {
         <dt className="text-xs opacity-50 uppercase">
           <StaggerParagraph>Tags</StaggerParagraph>
         </dt>
-        <div className="scale-x-0 h-[1px] w-full bg-black opacity-[.15] animate-divider-scale origin-left my-4" />
+        <div
+          className="h-px w-full bg-black opacity-[.15] animate-divider-scale origin-left my-4"
+          style={{ transform: "scaleX(0)" }}
+        />
         <dd className="pb-8">
           <ul className="flex flex-wrap gap-2">
             {categories?.map((category) => (
@@ -72,7 +81,7 @@ export function Post({ post }: { post: POST_QUERYResult }) {
         {mainImage?.asset?._ref ? (
           <FadeIn className="w-40">
             <Image
-              className="float-left m-0 mr-4 rounded-lg"
+              className="float-left !m-0 !mr-4 rounded-lg"
               priority
               src={urlFor(mainImage?.asset?._ref).width(300).height(300).url()}
               width={300}
@@ -89,5 +98,5 @@ export function Post({ post }: { post: POST_QUERYResult }) {
 
       <hr className="my-16" />
     </main>
-  );
+  )
 }

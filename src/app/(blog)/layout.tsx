@@ -1,19 +1,22 @@
-import { LogoLink } from "../components/LogoLink";
-import { HeaderMenu } from "../components/HeaderMenu";
-import { LocalTimeText } from "../components/LocalTimeText";
-import { SanityLive } from "@/sanity/lib/live";
-import { DisableDraftMode } from "@/components/DisableDraftMode";
-import { VisualEditing } from "next-sanity";
-import { draftMode } from "next/headers";
+import { LogoLink } from "../components/LogoLink"
+import { HeaderMenu } from "../components/HeaderMenu"
+import { LocalTimeText } from "../components/LocalTimeText"
+import { SanityLive } from "@/sanity/lib/live"
+import { DisableDraftMode } from "@/components/DisableDraftMode"
+import { VisualEditing } from "next-sanity"
+import { draftMode } from "next/headers"
 
 export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <main className="px-4 w-screen max-w-6xl mx-auto">
-      <header className="-translate-y-full animate-translate-header py-6 justify-between flex font-medium">
+      <header
+        className="animate-translate-header py-6 flex justify-between font-medium"
+        style={{ transform: "translateY(-100%)" }}
+      >
         <LogoLink />
 
         <HeaderMenu />
@@ -48,7 +51,7 @@ export default async function RootLayout({
           </li>
         </ul>
 
-        <div className="h-[1px] w-full bg-black opacity-[.15] my-8" />
+        <div className="h-px w-full bg-black opacity-[.15] my-8" />
 
         <div className="flex justify-between">
           <div>
@@ -63,5 +66,5 @@ export default async function RootLayout({
         </div>
       </footer>
     </main>
-  );
+  )
 }

@@ -1,25 +1,25 @@
-"use client";
+"use client"
 
-import { HTMLAttributes, ReactNode, useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import { CustomEase } from "gsap/all";
-import SplitType from "split-type";
-import { classNames } from "@/utils/classNames";
+import { HTMLAttributes, ReactNode, useLayoutEffect, useRef } from "react"
+import gsap from "gsap"
+import { CustomEase } from "gsap/all"
+import SplitType from "split-type"
+import { classNames } from "@/utils/classNames"
 
 interface IProps extends HTMLAttributes<HTMLHeadingElement> {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export function StaggerText({ children, className = "", ...rest }: IProps) {
-  const textRef = useRef<HTMLHeadingElement>(null);
+  const textRef = useRef<HTMLHeadingElement>(null)
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      if (!textRef.current) return () => split.revert();
+      if (!textRef.current) return () => split.revert()
 
-      let split = SplitType.create(textRef.current);
+      let split = SplitType.create(textRef.current)
 
-      const timeline = gsap.timeline();
+      const timeline = gsap.timeline()
 
       timeline
         .from(textRef.current, {
@@ -32,13 +32,13 @@ export function StaggerText({ children, className = "", ...rest }: IProps) {
           delay: 0.2,
           duration: 0.8,
           ease: CustomEase.create("custom", "0.62,0.05,0.01,0.99"),
-        });
+        })
 
-      return () => split.revert();
-    }, textRef);
+      return () => split.revert()
+    }, textRef)
 
-    return () => ctx.revert();
-  }, []);
+    return () => ctx.revert()
+  }, [])
 
   return (
     <h1
@@ -52,5 +52,5 @@ export function StaggerText({ children, className = "", ...rest }: IProps) {
     >
       {children}
     </h1>
-  );
+  )
 }

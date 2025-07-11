@@ -45,7 +45,7 @@ ${values.signature}.
         <span className="text-gray-400 relative px-2">
           {values.name || "type your name"}
           <input
-            className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-none"
+            className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-hidden"
             type="text"
             name="name"
             value={values.name}
@@ -56,7 +56,7 @@ ${values.signature}.
         <span className="text-gray-400 relative px-2">
           {values.topic || "web development"}
           <input
-            className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-none"
+            className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-hidden"
             type="text"
             name="topic"
             value={values.topic}
@@ -67,7 +67,7 @@ ${values.signature}.
         <span className="text-gray-400 relative px-2">
           {values.company || "your company"}
           <input
-            className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-none"
+            className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-hidden"
             type="text"
             name="company"
             value={values.company}
@@ -78,7 +78,7 @@ ${values.signature}.
         <span className="text-gray-400 relative px-2">
           {values.duration || "30 days"}
           <input
-            className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-none"
+            className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-hidden"
             type="text"
             name="duration"
             value={values.duration}
@@ -89,7 +89,7 @@ ${values.signature}.
         <span className="text-gray-400 relative px-2 inline-block">
           {values.budget || "1.000€ - 5.000€"}
           <input
-            className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-none"
+            className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-hidden"
             type="text"
             name="budget"
             value={values.budget}
@@ -101,7 +101,7 @@ ${values.signature}.
         <span className="text-gray-400 relative px-2 inline-block">
           {values.phone || "+351 999 999 999"}
           <input
-            className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-none"
+            className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-hidden"
             type="tel"
             name="phone"
             value={values.phone}
@@ -112,7 +112,7 @@ ${values.signature}.
         <span className="text-gray-400 relative px-2">
           {values.email || "your@email.com"}
           <input
-            className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-none"
+            className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-hidden"
             type="text"
             name="email"
             value={values.email}
@@ -128,7 +128,7 @@ ${values.signature}.
         <span className="text-gray-400 relative px-2">
           {values.signature || "your signature"}
           <input
-            className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-none"
+            className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-hidden"
             type="text"
             name="signature"
             value={values.signature}
@@ -140,7 +140,7 @@ ${values.signature}.
 
       <div className="pt-16">
         <a
-          className="bg-primary text-white px-3.5 py-2.5 rounded-sm"
+          className="bg-primary text-white px-3.5 py-2.5 rounded-xs"
           href={mailtoLink}
         >
           Send e-mail
