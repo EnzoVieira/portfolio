@@ -1,6 +1,19 @@
-"use client";
+"use client"
 
-import { useState } from "react";
+import { useState } from "react"
+
+interface IPlaceholderProps {
+  value: string
+  fallback: string
+}
+
+function Placeholder({ value, fallback }: IPlaceholderProps) {
+  return value ? (
+    <span>{value}</span>
+  ) : (
+    <span className="text-gray-400">{fallback}</span>
+  )
+}
 
 export default function ContactPage() {
   const [values, setValues] = useState({
@@ -12,15 +25,15 @@ export default function ContactPage() {
     phone: "",
     email: "",
     signature: "",
-  });
+  })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setValues((prev) => ({ ...prev, [name]: value }));
-  };
+    const { name, value } = e.target
+    setValues((prev) => ({ ...prev, [name]: value }))
+  }
 
-  const email = "dev@enzovieira.com";
-  const subject = encodeURIComponent("Discussion about Web Development");
+  const email = "dev@enzovieira.com"
+  const subject = encodeURIComponent("Discussion about Web Development")
   const body = encodeURIComponent(`
 Hey, Enzo!
 
@@ -31,9 +44,9 @@ I look forward to hearing from you at ${values.phone} or ${values.email}.
 
 Best regards,
 ${values.signature}.
-  `);
+  `)
 
-  const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+  const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`
 
   return (
     <main>
@@ -42,8 +55,8 @@ ${values.signature}.
         <br />
         <br />
         <span>My name is</span>
-        <span className="text-gray-400 relative px-2">
-          {values.name || "type your name"}
+        <span className="relative px-2">
+          <Placeholder value={values.name} fallback="type your name" />
           <input
             className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-hidden"
             type="text"
@@ -53,8 +66,8 @@ ${values.signature}.
           />
         </span>
         <span>and I&apos;d to discuss about</span>
-        <span className="text-gray-400 relative px-2">
-          {values.topic || "web development"}
+        <span className="relative px-2">
+          <Placeholder value={values.topic} fallback="web development" />
           <input
             className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-hidden"
             type="text"
@@ -64,8 +77,9 @@ ${values.signature}.
           />
         </span>
         <span>for my company, that&apos;s called</span>
-        <span className="text-gray-400 relative px-2">
-          {values.company || "your company"}
+        <span className="relative px-2">
+          <Placeholder value={values.company} fallback="your company" />
+
           <input
             className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-hidden"
             type="text"
@@ -74,9 +88,10 @@ ${values.signature}.
             onChange={handleChange}
           />
         </span>
-        <span>It&apos;s a project that will take</span>
-        <span className="text-gray-400 relative px-2">
-          {values.duration || "30 days"}
+        <span>. It&apos;s a project that will take</span>
+        <span className="relative px-2">
+          <Placeholder value={values.duration} fallback="30 days" />
+
           <input
             className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-hidden"
             type="text"
@@ -86,8 +101,9 @@ ${values.signature}.
           />
         </span>
         <span>. A budget of </span>
-        <span className="text-gray-400 relative px-2 inline-block">
-          {values.budget || "1.000€ - 5.000€"}
+        <span className="relative px-2 inline-block">
+          <Placeholder value={values.budget} fallback="1.000€ - 5.000€" />
+
           <input
             className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-hidden"
             type="text"
@@ -98,8 +114,9 @@ ${values.signature}.
         </span>
         <span>was set aside. </span>
         <span>I look forward to hearing from you at</span>
-        <span className="text-gray-400 relative px-2 inline-block">
-          {values.phone || "+351 999 999 999"}
+        <span className="relative px-2 inline-block">
+          <Placeholder value={values.phone} fallback="+351 999 999 999" />
+
           <input
             className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-hidden"
             type="tel"
@@ -109,8 +126,9 @@ ${values.signature}.
           />
         </span>
         <span>or</span>
-        <span className="text-gray-400 relative px-2">
-          {values.email || "your@email.com"}
+        <span className="relative px-2">
+          <Placeholder value={values.email} fallback="your@email.com" />
+
           <input
             className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-hidden"
             type="text"
@@ -125,8 +143,9 @@ ${values.signature}.
         <span>Best regards,</span>
         <br />
         <br />
-        <span className="text-gray-400 relative px-2">
-          {values.signature || "your signature"}
+        <span className="relative px-2">
+          <Placeholder value={values.signature} fallback="your signature" />
+
           <input
             className="px-2 absolute inset-0 w-full bg-transparent caret-black text-transparent border-none focus:outline-hidden"
             type="text"
@@ -147,5 +166,5 @@ ${values.signature}.
         </a>
       </div>
     </main>
-  );
+  )
 }
